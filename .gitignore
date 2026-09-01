@@ -1,0 +1,4 @@
+api/config.local.php
+api/data/*.sqlite
+api/uploads/**
+!api/uploads/.gitkeep

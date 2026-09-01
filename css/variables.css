@@ -1,0 +1,131 @@
+/* ============================================================
+   DESIGN TOKENS — Paleta petróleo/teal + ámbar (SaaS profesional)
+   Tema claro por defecto; [data-theme="dark"] sobre <html>.
+   ============================================================ */
+
+:root {
+  /* --- Marca / Primario (petróleo-teal) --- */
+  --brand-50:  #e6f4f4;
+  --brand-100: #c5e6e7;
+  --brand-200: #95d0d2;
+  --brand-300: #5fb3b7;
+  --brand-400: #2f9499;
+  --brand-500: #0f7d83;
+  --brand-600: #0b6b70;
+  --brand-700: #0a565a;
+  --brand-800: #0a474b;
+  --brand-900: #0a3a3d;
+
+  /* --- Acento (ámbar cálido) --- */
+  --accent-300: #ffd86b;
+  --accent-400: #ffc534;
+  --accent-500: #f5a623;
+  --accent-600: #db8b0f;
+
+  /* --- Semánticos --- */
+  --success: #16a34a;
+  --success-soft: #dcfce7;
+  --warning: #d97706;
+  --warning-soft: #fef3c7;
+  --danger:  #dc2626;
+  --danger-soft: #fee2e2;
+  --info:    #2563eb;
+  --info-soft: #dbeafe;
+
+  /* --- Escala neutra --- */
+  --slate-0:  #ffffff;
+  --slate-25: #fbfcfc;
+  --slate-50: #f4f6f6;
+  --slate-100:#e9eded;
+  --slate-200:#d6dddd;
+  --slate-300:#b6c1c1;
+  --slate-400:#8a9898;
+  --slate-500:#637070;
+  --slate-600:#475252;
+  --slate-700:#323b3b;
+  --slate-800:#1f2727;
+  --slate-900:#121818;
+
+  /* --- Tokens semánticos (tema claro) --- */
+  --bg:            #f3f6f5;
+  --bg-pattern:    radial-gradient(circle at 1px 1px, rgba(15,125,131,.05) 1px, transparent 0);
+  --surface:       var(--slate-0);
+  --surface-2:     var(--slate-50);
+  --surface-3:     var(--slate-100);
+  --border:        var(--slate-200);
+  --border-strong: var(--slate-300);
+  --text:          var(--slate-800);
+  --text-soft:     var(--slate-500);
+  --text-faint:    var(--slate-400);
+  --primary:       var(--brand-600);
+  --primary-hover: var(--brand-700);
+  --primary-soft:  var(--brand-50);
+  --on-primary:    #ffffff;
+  --ring:          rgba(15,125,131,.35);
+
+  --sidebar-bg:    var(--brand-900);
+  --sidebar-text:  #cfe3e3;
+  --sidebar-muted: #7da3a4;
+  --sidebar-active:var(--brand-700);
+  --sidebar-accent:var(--accent-400);
+
+  /* --- Sombras --- */
+  --shadow-xs: 0 1px 2px rgba(10,58,61,.06);
+  --shadow-sm: 0 1px 3px rgba(10,58,61,.08), 0 1px 2px rgba(10,58,61,.04);
+  --shadow-md: 0 4px 12px rgba(10,58,61,.10), 0 2px 4px rgba(10,58,61,.06);
+  --shadow-lg: 0 12px 32px rgba(10,58,61,.16), 0 4px 8px rgba(10,58,61,.06);
+  --shadow-xl: 0 24px 60px rgba(10,58,61,.22);
+
+  /* --- Radios --- */
+  --r-xs: 6px;
+  --r-sm: 9px;
+  --r-md: 13px;
+  --r-lg: 18px;
+  --r-xl: 26px;
+  --r-full: 999px;
+
+  /* --- Tipografía --- */
+  --font-display: "Bricolage Grotesque", "Manrope", system-ui, sans-serif;
+  --font-body:    "Manrope", system-ui, -apple-system, sans-serif;
+
+  /* --- Layout --- */
+  --sidebar-w: 264px;
+  --sidebar-w-collapsed: 76px;
+  --topbar-h: 66px;
+  --transition: 180ms cubic-bezier(.4,0,.2,1);
+}
+
+[data-theme="dark"] {
+  --bg:            #0c1414;
+  --bg-pattern:    radial-gradient(circle at 1px 1px, rgba(95,179,183,.06) 1px, transparent 0);
+  --surface:       #131e1e;
+  --surface-2:     #182525;
+  --surface-3:     #1e2e2e;
+  --border:        #243333;
+  --border-strong: #324444;
+  --text:          #e6efee;
+  --text-soft:     #9db0af;
+  --text-faint:    #6f8483;
+  --primary:       var(--brand-300);
+  --primary-hover: var(--brand-200);
+  --primary-soft:  rgba(95,179,183,.12);
+  --on-primary:    #062c2e;
+  --ring:          rgba(95,179,183,.4);
+
+  --sidebar-bg:    #0a1212;
+  --sidebar-text:  #b9d0cf;
+  --sidebar-muted: #5e7b7a;
+  --sidebar-active:#16302f;
+  --sidebar-accent:var(--accent-400);
+
+  --success-soft: rgba(22,163,74,.18);
+  --warning-soft: rgba(217,119,6,.2);
+  --danger-soft:  rgba(220,38,38,.18);
+  --info-soft:    rgba(37,99,235,.2);
+
+  --shadow-xs: 0 1px 2px rgba(0,0,0,.4);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.5);
+  --shadow-md: 0 6px 16px rgba(0,0,0,.5);
+  --shadow-lg: 0 16px 40px rgba(0,0,0,.6);
+  --shadow-xl: 0 28px 70px rgba(0,0,0,.7);
+}

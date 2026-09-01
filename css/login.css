@@ -1,0 +1,59 @@
+/* ============================================================
+   LOGIN — pantalla de acceso (usuario/contraseña fijos)
+   ============================================================ */
+#loginScreen {
+  display: none;
+  position: fixed; inset: 0; z-index: 9999;
+  align-items: center; justify-content: center;
+  min-height: 100vh; padding: 1.5rem;
+  background:
+    var(--bg-pattern),
+    linear-gradient(150deg, var(--brand-900), var(--brand-700) 60%, var(--brand-500));
+  background-size: 22px 22px, cover;
+}
+.login-card {
+  width: 100%; max-width: 380px;
+  background: var(--surface); border-radius: var(--r-xl);
+  box-shadow: var(--shadow-xl);
+  padding: 2.4rem 2.2rem 2.2rem;
+  text-align: center;
+}
+.login-logo { width: 64px; height: 64px; object-fit: contain; margin: 0 auto 1rem; display: block; border-radius: var(--r-md); }
+.login-card h1 { font-family: var(--font-display); font-size: 1.3rem; margin: 0 0 .35rem; color: var(--text); }
+.login-sub { color: var(--text-soft); font-size: .88rem; margin: 0 0 1.6rem; }
+.login-field { text-align: left; margin-bottom: 1.1rem; }
+.login-field label { display: block; font-size: .78rem; font-weight: 600; color: var(--text-soft); margin-bottom: .35rem; }
+.login-field input {
+  height: 44px; width: 100%; padding: 0 .9rem; border-radius: var(--r-sm);
+  border: 1px solid var(--border); background: var(--surface-2); color: var(--text);
+  font-size: .92rem; transition: all var(--transition);
+}
+.login-field input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--ring); background: var(--surface); }
+.login-pass-wrap { position: relative; }
+.login-pass-wrap input { padding-right: 2.6rem; }
+.login-eye {
+  position: absolute; right: .5rem; top: 50%; transform: translateY(-50%);
+  width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+  background: none; border: none; color: var(--text-faint); cursor: pointer; border-radius: var(--r-xs);
+}
+.login-eye:hover { color: var(--text-soft); background: var(--surface-3); }
+.login-eye svg { width: 19px; height: 19px; }
+.login-error { color: var(--danger); font-size: .82rem; margin: -.3rem 0 1rem; text-align: left; }
+.login-submit { margin-top: .3rem; height: 46px; font-size: .92rem; }
+.login-submit.shake { animation: loginShake .4s; }
+@keyframes loginShake {
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(2px); }
+  30%, 50%, 70% { transform: translateX(-4px); }
+  40%, 60% { transform: translateX(4px); }
+}
+
+/* ---------- Botón de cerrar sesión (sidebar) ---------- */
+.sidebar-logout {
+  display: flex; align-items: center; gap: .6rem; width: 100%;
+  padding: .8rem 1.1rem; background: none; border: none; cursor: pointer;
+  color: var(--sidebar-muted); font-size: .82rem; font-weight: 600;
+  font-family: var(--font-body); transition: color var(--transition), background var(--transition);
+}
+.sidebar-logout:hover { color: var(--sidebar-text); background: rgba(255,255,255,.05); }
+.sidebar-logout svg { width: 17px; height: 17px; stroke-width: 2; flex-shrink: 0; }

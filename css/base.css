@@ -1,0 +1,113 @@
+/* ============================================================
+   BASE — reset, tipografía, utilidades
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image: var(--bg-pattern);
+  background-size: 22px 22px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "cv11", "ss01";
+  transition: background-color var(--transition), color var(--transition);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+h1 { font-size: 1.6rem; }
+h2 { font-size: 1.25rem; }
+h3 { font-size: 1.05rem; }
+
+a { color: var(--primary); text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+input, select, textarea { font-family: inherit; font-size: inherit; color: inherit; }
+
+/* Tamaño por defecto para íconos SVG inline sin una clase que los acote
+   (ej. dentro de un <h3>) — evita que rendericen al tamaño intrínseco del
+   navegador (~300x150px). Cualquier regla más específica (.btn svg, etc.)
+   sigue ganando por especificidad. */
+svg { width: 1em; height: 1em; vertical-align: -0.125em; }
+
+/* Números tabulares para datos */
+.tnum, .kpi-value, table td, .badge-count {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+::selection { background: var(--brand-300); color: #062c2e; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--r-full);
+  border: 3px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--slate-400); }
+
+/* Focus accesible */
+:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: var(--r-xs);
+}
+
+/* Utilidades */
+.hidden { display: none !important; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: .5rem; }
+.gap-3 { gap: .75rem; }
+.gap-4 { gap: 1rem; }
+.flex-wrap { flex-wrap: wrap; }
+.ml-auto { margin-left: auto; }
+.w-full { width: 100%; }
+.text-soft { color: var(--text-soft); }
+.text-faint { color: var(--text-faint); }
+.text-sm { font-size: .8125rem; }
+.text-xs { font-size: .72rem; }
+.mono { font-variant-numeric: tabular-nums; }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Animaciones de entrada */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: .45; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.stagger > * { animation: fadeInUp .5s both; }
+.stagger > *:nth-child(1){animation-delay:.02s}
+.stagger > *:nth-child(2){animation-delay:.06s}
+.stagger > *:nth-child(3){animation-delay:.10s}
+.stagger > *:nth-child(4){animation-delay:.14s}
+.stagger > *:nth-child(5){animation-delay:.18s}
+.stagger > *:nth-child(6){animation-delay:.22s}
+.stagger > *:nth-child(7){animation-delay:.26s}
+.stagger > *:nth-child(8){animation-delay:.30s}
